@@ -1,0 +1,35 @@
+language: node_js
+
+node_js: stable
+
+# Travis-CI Caching
+cache:
+  directories:
+    - node_modules
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+script:
+  - hexo clean
+  - git clone https://${GITHUB_REPO} public/
+  - hexo generate
+
+after_script:
+  - cd ./public
+  - git checkout master
+  - git config user.name "Brooks Bao"
+  - git config user.email "bootell@outlook.com"
+  - git add .
+  - git commit -m "travis-ci auto builder"
+  - git push "https://${GITHUB_TOKEN}@${GITHUB_REPO}" master:master
+
+# E: Build LifeCycle
+branches:
+  only:
+    - hexo
+
+env:
+ global:
+   - GITHUB_REPO: github.com/bootell/bootell.github.io.git
