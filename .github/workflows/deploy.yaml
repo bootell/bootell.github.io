@@ -16,20 +16,22 @@ jobs:
         node-version: '10.x'
     - name: Install dependencies
       run: npm install
-    - name: Get old version
-      run: |
-        npx hexo clean
-        git clone "https://github.com/${GITHUB_REPOSITORY}" public
-    - name: Generate pages
-      run: npx hexo generate
-    - name: Deploy to GitHub Page
+    - name: Write Access
       env:
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
         mkdir -p ~/.ssh/
-        echo $DEPLOY_KEY > ~/.ssh/id_rsa
+        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
+    - name: Get old version
+      run: |
+        npx hexo clean
+        git clone "git@github.com:${GITHUB_REPOSITORY}.git" public
+    - name: Generate pages
+      run: npx hexo generate
+    - name: Deploy to GitHub Page
+      run: |
         cd $GITHUB_WORKSPACE/public
         git config user.name 'Brooks Bao'
         git config user.email "bootell@outlook.com"

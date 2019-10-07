@@ -1,7 +1,8 @@
 ---
 title: 'Paypal 实现自动订阅'
 date: 2018-08-30 16:30:00
-tags:
+tags: 
+- PHP
 ---
 
 官方给出的自动续费分五步 [Intergrate Subscriptions](https://developer.paypal.com/docs/subscriptions/integrate/integrate-steps/)。实际开发中，还需要实现支付结果处理和订阅管理等：
