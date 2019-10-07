@@ -24,11 +24,15 @@ jobs:
       run: npx hexo generate
     - name: Deploy to GitHub Page
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
+        mkdir -p ~/.ssh/
+        echo $DEPLOY_KEY > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
         cd $GITHUB_WORKSPACE/public
         git config user.name 'Brooks Bao'
         git config user.email "bootell@outlook.com"
         git add .
         git commit -m "github actions auto build"
-        git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:master
+        git push origin master
