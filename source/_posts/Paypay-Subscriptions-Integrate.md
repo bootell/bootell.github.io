@@ -5,6 +5,7 @@ tags:
 - PHP
 ---
 
+
 官方给出的自动续费分五步 [Intergrate Subscriptions](https://developer.paypal.com/docs/subscriptions/integrate/integrate-steps/)。实际开发中，还需要实现支付结果处理和订阅管理等：
 
 1. 事先创建计划，并激活；
@@ -13,7 +14,6 @@ tags:
 4. 获取用户账单，包括每次扣款结果通知的接收或支付结果的主动查询；
 5. 处理用户取消订阅等通知。
 
-<!--more-->
 
 
 ### 使用 Palpal SDK
@@ -81,3 +81,5 @@ composer require paypal/rest-api-sdk-php
 <https://paypal.github.io/PayPal-PHP-SDK/sample/>
 
 <https://www.cnblogs.com/pheye/p/6603126.html>
+
+<!--more-->

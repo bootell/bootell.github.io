@@ -5,7 +5,9 @@ updated: 2020-08-13 11:14:00
 tags: PHP
 ---
 
+
 PHP 服务之间互相调用，有很多选择，可以通过 HTTP 接口，或者 RPC 像 [yar](https://github.com/laruence/yar)。考虑到今后多语言的扩展性与通用性，选取了 gRPC 作为方式。
+
 
 
 ### gRPC通信
@@ -27,7 +29,6 @@ gRPC 允许四种方法：
 
 若使用fpm模式运行PHP，暂时只能方便实现单向 RPC。
 
-<!--more-->
 
 
 ### gRPC环境配置
@@ -53,6 +54,7 @@ cd grpc && git submodule update --init
 make grpc_php_plugin
 mv bins/opt/grpc_php_plugin /usr/local/bin
 ```
+
 
 
 ### gRPC 使用
@@ -125,3 +127,5 @@ server {
 ```
 
 使用 yii2 框架实现的完整例子：[bootell/yii2-grpc-demo](https://github.com/bootell/yii2-grpc-demo)
+
+<!--more-->

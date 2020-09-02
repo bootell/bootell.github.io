@@ -43,7 +43,6 @@ Scrapy 执行时的流程大致是
 6. Engine 将内容发送给 Spider 做数据处理，之前执行 Middleware 的 `process_spider_input()`
 7. Spider 处理后，将结果通过 Middleware 的 `process_spider_output()` 后，返回给 Engine
 8. Engine 将处理后的数据发送给 Pipline 进行操作，并将处理过的 Request 发送给 Scheduler，请求下一个 Request
-<!--more-->
 
 
 `settings.py` 配置文件中，一般需要修改的配置如下
@@ -64,7 +63,6 @@ DOWNLOADER_MIDDLEWARES = {}
 # 管道
 ITEM_PIPELINES = {}
 ```
-
 
 
 
@@ -129,7 +127,6 @@ class Ithome(CrawlSpider):
 
 
 
-
 ### Items
 用来定义结构化的结果
 完整示例 `crawler/items.py` 如下所示
@@ -143,7 +140,6 @@ class CrawlerItem(scrapy.Item):
     content = scrapy.Field()
     comments = scrapy.Field()
 ```
-
 
 
 
@@ -250,7 +246,6 @@ DOWNLOADER_MIDDLEWARES = {
 
 
 
-
 ### Piplines
 
 ```python
@@ -293,7 +288,6 @@ ITEM_PIPELINES = {
 MONGO_URI='mongodb://127.0.0.1:27017'
 MONGO_DATABASE = 'items'
 ```
-
 
 
 
@@ -393,7 +387,6 @@ htpasswd -c /etc/nginx/conf.d/.htpasswd username password
 
 
 
-
 ### Speed optimization
 按照默认配置部署到服务器之后，发现服务器负载非常低，爬取速度也很慢。可以简单的修改配置加快爬虫速度
 ```python
@@ -407,3 +400,4 @@ CONCURRENT_REQUESTS_PER_IP = 100
 REACTOR_THREADPOOL_MAXSIZE = 20
 ```
 
+<!--more-->

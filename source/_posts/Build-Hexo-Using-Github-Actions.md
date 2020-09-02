@@ -5,14 +5,17 @@ tags:
 - Blog
 ---
 
+
 一直使用 [Travis CI](https://travis-ci.org) 来自动生成和部署 Hexo。最近 Github 推出了自己的持续集成服务 [Github Actions](https://github.com/features/actions)，于是改用它以方便管理。在此记录一下两种方法。
 
-<!--more-->
+
 
 ### Hexo 配置
 
 将主题文件使用 git submodule 跟踪：`git submodule add https://github.com/hexojs/hexo-theme-landscape themes/landscape`；
 先随意推送一个提交到远端的 master 分支进行初始化，源码文件不要使用 master 分支提交到远端；
+
+
 
 ### 使用 Github Actions
 
@@ -55,6 +58,8 @@ jobs:
         git push https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:master
 ```
 
+
+
 ### 使用 Travis CI
 
 首先需要创建 [GitHub Token](https://github.com/settings/tokens)，用于最后推到 `Github Pages`；然后登录 [Travis CI](https://travis-ci.org) 并授权后，在设置里添加变量 `GITHUB_TOKEN`，值为上面创建的 token。
@@ -85,3 +90,5 @@ after_script:
   - git commit -m "travis-ci auto build"
   - git push "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" master:master
 ```
+
+<!--more-->
