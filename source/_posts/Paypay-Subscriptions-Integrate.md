@@ -15,6 +15,8 @@ tags:
 5. 处理用户取消订阅等通知。
 
 
+<!--more-->
+
 
 ### 使用 Palpal SDK
 
@@ -81,5 +83,3 @@ composer require paypal/rest-api-sdk-php
 <https://paypal.github.io/PayPal-PHP-SDK/sample/>
 
 <https://www.cnblogs.com/pheye/p/6603126.html>
-
-<!--more-->

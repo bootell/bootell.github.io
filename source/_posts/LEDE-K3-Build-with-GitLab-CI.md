@@ -8,6 +8,7 @@ tags: 路由器
 
 本地编译一次 LEDE/OpenWrt 固件花了近3个小时，下载依赖文件因为网络问题也比较慢，考虑可以利用各种免费的 CI 自动集成工具来编译需要的固件，目前可选的有 Github Actions 和 GitLab CI。
 
+<!--more-->
 
 
 ### 编译配置
@@ -164,5 +165,3 @@ make:
 ### 参考资料
 https://www.right.com.cn/forum/thread-257677-1-1.html
 https://www.right.com.cn/forum/thread-419328-1-1.html
-
-<!--more-->

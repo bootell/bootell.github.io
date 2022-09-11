@@ -64,6 +64,7 @@ DOWNLOADER_MIDDLEWARES = {}
 ITEM_PIPELINES = {}
 ```
 
+<!--more-->
 
 
 ### Spider
@@ -399,5 +400,3 @@ CONCURRENT_REQUESTS_PER_IP = 100
 
 REACTOR_THREADPOOL_MAXSIZE = 20
 ```
-
-<!--more-->

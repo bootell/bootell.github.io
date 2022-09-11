@@ -9,6 +9,8 @@ tags:
 一直使用 [Travis CI](https://travis-ci.org) 来自动生成和部署 Hexo。最近 Github 推出了自己的持续集成服务 [Github Actions](https://github.com/features/actions)，于是改用它以方便管理。在此记录一下两种方法。
 
 
+<!--more-->
+
 
 ### Hexo 配置
 
@@ -90,5 +92,3 @@ after_script:
   - git commit -m "travis-ci auto build"
   - git push "https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" master:master
 ```
-
-<!--more-->

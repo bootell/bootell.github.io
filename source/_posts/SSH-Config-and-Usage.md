@@ -17,6 +17,8 @@ ssh-keygen -t rsa -b 4096 -C "youremail@example.com”
 生成后的文件在`~/.ssh`目录内，`id_rsa`为私钥，`id_rsa.pub`为公钥。将公钥复制到远程机器对应用户的`~/.ssh/authorized_keys`内。
 
 
+<!--more-->
+
 
 ### 远程服务器配置
 
@@ -135,5 +137,3 @@ ssh -R [localhost:]8080:server2:80 root@server3
 ssh -D [绑定地址:]绑定端口 用户@主机地址
 ssh -D [localhost:]8080 root@server1
 ```
-
-<!--more-->

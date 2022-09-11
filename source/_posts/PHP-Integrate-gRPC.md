@@ -9,6 +9,8 @@ tags: PHP
 PHP 服务之间互相调用，有很多选择，可以通过 HTTP 接口，或者 RPC 像 [yar](https://github.com/laruence/yar)。考虑到今后多语言的扩展性与通用性，选取了 gRPC 作为方式。
 
 
+<!--more-->
+
 
 ### gRPC通信
 
@@ -127,5 +129,3 @@ server {
 ```
 
 使用 yii2 框架实现的完整例子：[bootell/yii2-grpc-demo](https://github.com/bootell/yii2-grpc-demo)
-
-<!--more-->
