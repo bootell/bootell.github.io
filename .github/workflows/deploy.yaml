@@ -16,25 +16,16 @@ jobs:
         node-version: '10.x'
     - name: Install dependencies
       run: npm install
-    - name: Write Access
-      env:
-        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
     - name: Get old version
       run: |
         npx hexo clean
         git clone "git@github.com:${GITHUB_REPOSITORY}.git" public
     - name: Generate pages
       run: npx hexo generate
-    - name: Deploy to GitHub Page
-      run: |
-        cd $GITHUB_WORKSPACE/public
-        git config user.name 'Brooks Bao'
-        git config user.email "bootell@outlook.com"
-        git add .
-        git commit -m "github actions auto build"
-        git push origin master
+    - name: Deploy
+      uses: sma11black/hexo-action@v1.0.4
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        user_name: Brooks Bao
+        user_email: bootell@outlook.com
+        commit_msg: github actions auto build
