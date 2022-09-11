@@ -38,3 +38,5 @@ jobs:
         git add .
         git commit -m "github actions auto build"
         git push origin master
+    - name: Clean
+      run: rm ~/.ssh/id_rsa
