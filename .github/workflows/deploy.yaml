@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
       with:
         ref: hexo
         submodules: true
@@ -17,9 +17,11 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Get old version
-      run: |
-        npx hexo clean
-        git clone "git@github.com:${GITHUB_REPOSITORY}.git" public
+      run: npx hexo clean
+    - uses: actions/checkout@v3
+      with:
+        ref: master
+        path: public
     - name: Generate pages
       run: npx hexo generate
     - name: Deploy
