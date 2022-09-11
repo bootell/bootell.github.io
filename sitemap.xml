@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://bootell.net/2019/08/06/Scrapy-Development/</loc>
-    
-    <lastmod>2022-09-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bootell.net/2022/08/23/macOs-Dictionary-Compile/</loc>
-    
-    <lastmod>2022-09-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bootell.net/2019/10/03/Build-Hexo-Using-Github-Actions/</loc>
     
     <lastmod>2022-09-11</lastmod>
@@ -39,6 +21,24 @@
   
   <url>
     <loc>https://bootell.net/2018/08/30/Paypay-Subscriptions-Integrate/</loc>
+    
+    <lastmod>2022-09-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bootell.net/2019/08/06/Scrapy-Development/</loc>
+    
+    <lastmod>2022-09-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bootell.net/2022/08/23/macOs-Dictionary-Compile/</loc>
     
     <lastmod>2022-09-11</lastmod>
     
